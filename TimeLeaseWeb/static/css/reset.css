@@ -1,0 +1,77 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "微软雅黑";
+}
+
+.clear {
+    clear: both;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.all-container {
+    width: 100%;
+}
+
+#app {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+}
+
+
+/* 以下是自定义样式 */
+.hufe-input {
+    width: 100%;
+    padding-left: 10px;
+    height: 38px;
+    line-height: 1.3;
+    line-height: 38px\9;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    outline: 0;
+    -webkit-appearance: none;
+    transition: all .3s;
+}
+
+.hufe-input:hover {
+    border-color: #D2D2D2!important;
+}
+
+
+/* 以上是样式调整 */
+
+ ::-webkit-scrollbar {
+    width: 9px;
+}
+
+ ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px gainsboro;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background: gainsboro;
+    -webkit-box-shadow: inset 0 0 6px gainsboro;
+}
+
+ ::-webkit-scrollbar-thumb:window-inactive {
+    background: gainsboro;
+}

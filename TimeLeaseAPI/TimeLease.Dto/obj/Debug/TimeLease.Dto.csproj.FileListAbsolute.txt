@@ -1,0 +1,11 @@
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\TimeLease.Dto.dll.config
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\TimeLease.Dto.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\TimeLease.Dto.pdb
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\EntityFramework.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\EntityFramework.xml
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Debug\TimeLease.Dto.csprojResolveAssemblyReference.cache
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Debug\TimeLease.Dto.csproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Debug\TimeLease.Dto.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Debug\TimeLease.Dto.pdb

@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TimeLease编辑器</title>
+    <link href="~/Contents/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/ueditor/third-party/video-js/video-js.min.css" rel="stylesheet" />
+    <link href="~/Contents/jquery-confirm.css" rel="stylesheet" />
+    <style>
+        html, body {
+            width:100%;
+            height:100%;
+            overflow-x:hidden;
+        }
+        .index {
+            width: 95%;
+            height: 80%;
+            margin: 0px auto;
+        }
+        #ueditor {
+            width: 100%;
+            height: 100%;   
+        }
+        .save-article {
+            margin:10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="index"> 
+        <input type="button" class="btn btn-info save-article" value="保存"/>
+        <textarea id="ueditor" name="content"></textarea>
+    </div>
+    <script src="~/ueditor/ueditor.config.js"></script>
+    <script src="~/ueditor/ueditor.all.min.js"></script>
+    <script src="~/ueditor/third-party/video-js/video.js"></script>
+    <script src="~/ueditor/third-party/jquery-1.10.2.min.js"></script>
+    <script src="~/Contents/jquery-confirm.js"></script>
+    <script>
+        var ue = UE.getEditor('ueditor');
+        if (!GetRoute("Id")) {
+            loadingDialog();
+        } 
+        //发布
+        $(".save-article").click(function () {
+            var text = ue.getContentTxt();
+            var html = ue.getContent();
+            if (text==""){
+                showDialog("请输入内容！");
+            } else if (!GetRoute("Id")){
+                showDialog("请登录后提交！");
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: "http://120.76.145.211:8013/api/Article/postDetail",
+                    data: {
+                        "Content": html,
+                        "UserId": GetRoute("Id")
+                    },
+                    success: function () {
+                        $(".jconfirm").remove();
+                        showDialog("保存成功！请返回上一个页面刷新获取");
+                        setTimeout(function () { window.location.reload() }, 1000)
+                    },
+                    error: function (data) {
+                        $(".jconfirm").remove();
+                        showDialog(eval("(" + data.responseText + ")").Reason);
+                    }
+                });
+            }
+        });
+
+
+
+        //获取url参数
+        function GetRoute(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        function showDialog(diglogContent) {
+            $.alert({
+                title: '通知',
+                content: diglogContent,
+                autoClose: '已知|3000',
+                buttons: {
+                    已知: function () {
+                    }
+                }
+            });
+        }
+        //状态通知框
+        function loadingDialog() {
+            var d = $.dialog({
+                title: '通知',
+                content: '请返回登录！',
+                closeIcon: false
+            });
+            return d;
+        }
+    </script>
+</body>
+</html>

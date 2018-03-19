@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7224B744-45C7-407A-AEBE-E6CACC683C82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TimeLease.Domain</RootNamespace>
+    <AssemblyName>TimeLease.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Apply.cs" />
+    <Compile Include="Entities\ApplyConfig.cs" />
+    <Compile Include="Entities\Article.cs" />
+    <Compile Include="Entities\ArticleConfig.cs" />
+    <Compile Include="Entities\ArticleDetail.cs" />
+    <Compile Include="Entities\ArticleDetailConfig.cs" />
+    <Compile Include="Entities\ArticleLook.cs" />
+    <Compile Include="Entities\ArticleLookConfig.cs" />
+    <Compile Include="Entities\ArticlePraise.cs" />
+    <Compile Include="Entities\ArticlePraiseConfig.cs" />
+    <Compile Include="Entities\BaseConfig.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\BonusPoint.cs" />
+    <Compile Include="Entities\BonusPointConfig.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\CommentConfig.cs" />
+    <Compile Include="Entities\Shop.cs" />
+    <Compile Include="Entities\ShopConfig.cs" />
+    <Compile Include="Entities\ShopExchange.cs" />
+    <Compile Include="Entities\ShopExchangeConfig.cs" />
+    <Compile Include="Entities\ShopType.cs" />
+    <Compile Include="Entities\ShopTypeConfig.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\TagConfig.cs" />
+    <Compile Include="Entities\TypeConfig.cs" />
+    <Compile Include="Entities\TypeEntity.cs" />
+    <Compile Include="Entities\UserConfig.cs" />
+    <Compile Include="Entities\UserEntity.cs" />
+    <Compile Include="Migrations\201712060529068_1206.cs" />
+    <Compile Include="Migrations\201712060529068_1206.Designer.cs">
+      <DependentUpon>201712060529068_1206.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeLeaseDbContext.cs" />
+    <Compile Include="TimeLeaseUnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeLease.Utilities\TimeLease.Utilities.csproj">
+      <Project>{93db11b5-de2e-43d6-aa54-14888fcf7960}</Project>
+      <Name>TimeLease.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712060529068_1206.resx">
+      <DependentUpon>201712060529068_1206.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

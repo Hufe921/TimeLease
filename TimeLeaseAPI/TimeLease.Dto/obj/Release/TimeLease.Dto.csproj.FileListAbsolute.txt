@@ -1,0 +1,11 @@
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\TimeLease.Dto.dll.config
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\TimeLease.Dto.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\TimeLease.Dto.pdb
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\EntityFramework.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\EntityFramework.xml
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Release\TimeLease.Dto.csprojResolveAssemblyReference.cache
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Release\TimeLease.Dto.csproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Release\TimeLease.Dto.dll
+C:\Users\dell\source\repos\TimeLease.API\TimeLease.Dto\obj\Release\TimeLease.Dto.pdb

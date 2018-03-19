@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>文章详情</title>
+    <link href="~/Contents/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Contents/jquery-confirm.css" rel="stylesheet" />
+    <link href="~/Contents/detail.css?time=12014" rel="stylesheet" />
+</head>
+<body>
+    <div class="detail-content">
+        <div class="detail-head gray">
+            <h2 style="text-align:center;">布局模拟</h2>
+        </div>
+        <div class="detail-main">
+            <div class="detail-left">
+                <p class="detail"></p>
+            </div>
+            <div class="detail-right gray">
+
+            </div>
+        </div>
+
+    </div>
+    <script src="~/ueditor/third-party/jquery-1.10.2.min.js"></script>
+    <script src="~/Contents/jquery-confirm.js"></script>
+    <script>
+        if (!GetRoute("userId") || !GetRoute("articleId")) {
+            loadingDialog();
+        } else {
+            $.getJSON("http://120.76.145.211:8013/api/Article/" + GetRoute("userId") + "/" + GetRoute("articleId")+"/getDetail", function (data) {
+                $(".detail").html(data);
+            });
+        }
+        //获取url参数
+        function GetRoute(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        function showDialog(diglogContent) {
+            $.alert({
+                title: '通知',
+                content: diglogContent,
+                autoClose: '已知|3000',
+                buttons: {
+                    已知: function () {
+                    }
+                }
+            });
+        }
+        //状态通知框
+        function loadingDialog() {
+            var d = $.dialog({
+                title: '通知',
+                content: '请返回登录！',
+                closeIcon: false
+            });
+            return d;
+        }
+    </script>
+</body>
+</html>
